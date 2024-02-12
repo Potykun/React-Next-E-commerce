@@ -10,14 +10,19 @@ const Search: FC = () => {
 		<div className={styles.search}>
 			<InputGroup>
 				<InputLeftElement pointerEvents='none'>
-					<SearchIcon color='gray.300' />
+					<SearchIcon color='gray.500' />
 				</InputLeftElement>
 				<Input
-					variant={'outline'}
+					variant={'flushed'}
 					type='search'
 					onChange={e => setSearchValue(e.target.value)}
 					value={searchValue}
 					placeholder='Search'
+					_focus={{
+						boxShadow: 'none',
+						ring: 'none'
+					}}
+					_focusVisible={{ borderColor: '#008D64' }}
 				/>
 			</InputGroup>
 		</div>
