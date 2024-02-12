@@ -1,0 +1,22 @@
+.wrapper-cart {
+	.heading {
+		@apply flex items-center;
+		.badge {
+			@apply mr-4 flex h-5 w-5 items-center justify-center rounded-full bg-red p-1 text-sm text-white;
+		}
+		.text {
+			@apply font-bold tracking-widest;
+		}
+	}
+	.cart {
+	}
+}
+
+.item {
+	@apply mb-4 flex items-center bg-green;
+	.name {
+		@apply tracking-widest;
+	}
+	.price {
+	}
+}

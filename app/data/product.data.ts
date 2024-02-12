@@ -14,7 +14,7 @@ export const products: IProduct[] = [
 	},
 	{
 		id: 2,
-		name: 'PeppermintWhiteChocolateHotCocoa',
+		name: 'Peppermint White Chocolate Hot Cocoa',
 		price: 5,
 		description: 'Coffee is the most popular drink in the world.',
 		images: [
@@ -36,7 +36,7 @@ export const products: IProduct[] = [
 	},
 	{
 		id: 4,
-		name: 'ChocolateCreamColdBrewHazelnutCookieCrumbles',
+		name: 'Chocolate Cream Cold BrewHaze lnut Cookie Crumbles',
 		price: 8,
 		description: 'Coffee is the most popular drink in the world.',
 		images: [
