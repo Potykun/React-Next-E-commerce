@@ -10,13 +10,16 @@ import {
 } from '@chakra-ui/react'
 import { FC, useRef, useState } from 'react'
 
+import { useTypedSelector } from '@/hooks/useTypedSelector'
+
 import styles from './Cart.module.scss'
 import CartItem from './cart-item/CartItem'
-import { cart } from '@/data/cart.data'
 
 const Cart: FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const btnRef = useRef<HTMLButtonElement>(null)
+
+	const cart = useTypedSelector(state => state.cart.items)
 	return (
 		<div className={styles['wrapper-cart']}>
 			<button
@@ -37,7 +40,7 @@ const Cart: FC = () => {
 				<DrawerOverlay />
 				<DrawerContent>
 					<DrawerCloseButton />
-					<DrawerHeader>My cart</DrawerHeader>
+					<DrawerHeader>My Basket</DrawerHeader>
 
 					<DrawerBody>
 						<div className={styles.cart}>
@@ -47,7 +50,15 @@ const Cart: FC = () => {
 						</div>
 					</DrawerBody>
 
-					<DrawerFooter>
+					<DrawerFooter
+						justifyContent='space-between'
+						borderTopWidth={1}
+						borderTopColor={'#f7f4f0'}
+					>
+						<div>
+							<div className={styles.footer}>total:</div>
+							<div>$100</div>
+						</div>
 						<Button colorScheme='green'>Checkout</Button>
 					</DrawerFooter>
 				</DrawerContent>

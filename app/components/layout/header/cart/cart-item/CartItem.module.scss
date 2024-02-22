@@ -1,5 +1,5 @@
 .item {
-	@apply mb-4 flex items-center gap-5;
+	@apply mb-8 flex items-center gap-5 border-b border-b-[#f7f4f0] pb-2;
 	.name {
 		@apply w-36 truncate font-semibold tracking-widest;
 	}

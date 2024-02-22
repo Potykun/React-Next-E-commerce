@@ -12,11 +12,19 @@
 	}
 }
 
-.item {
-	@apply mb-4 flex items-center bg-green;
-	.name {
-		@apply tracking-widest;
+// .item {
+// 	@apply mb-8 flex items-center border-b border-b-[#f7f4f0] bg-green;
+// 	.name {
+// 		@apply tracking-widest;
+// 	}
+// 	.price {
+// 	}
+// }
+.footer {
+	> div:first-child {
+		@apply mb-1 text-sm text-light-brown;
 	}
-	.price {
+	> div:last-child {
+		@apply text-lg font-semibold;
 	}
 }
