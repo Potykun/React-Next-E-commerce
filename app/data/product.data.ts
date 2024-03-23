@@ -25,7 +25,7 @@ export const products: IProduct[] = [
 	},
 	{
 		id: 3,
-		name: 'MatchaGreenTeaFrapp',
+		name: 'Matcha Green Tea Frapp',
 		price: 7,
 		description: 'Coffee is the most popular drink in the world.',
 		images: [
@@ -47,7 +47,7 @@ export const products: IProduct[] = [
 	},
 	{
 		id: 5,
-		name: 'StrawberryFrapp',
+		name: 'Strawberry Frapp',
 		price: 15,
 		description: 'Coffee is the most popular drink in the world.',
 		images: [

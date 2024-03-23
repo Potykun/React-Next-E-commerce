@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
+import { formatToCurrency } from '@/utils/format-to-currency'
+
 import styles from './CartItem.module.scss'
 import CartActions from './cart-actions/CartActions'
 import { ICartItem } from '@/Types/cart.interface'
@@ -17,10 +19,7 @@ const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 			<div>
 				<div className={styles.name}> {item.product.name}</div>
 				<div className={styles.price}>
-					{new Intl.NumberFormat('en-US', {
-						style: 'currency',
-						currency: 'USD'
-					}).format(item.product.price)}
+					{formatToCurrency(item.product.price)}
 				</div>
 				<CartActions item={item}></CartActions>
 			</div>

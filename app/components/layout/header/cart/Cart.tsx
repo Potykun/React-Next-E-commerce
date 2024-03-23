@@ -10,7 +10,9 @@ import {
 } from '@chakra-ui/react'
 import { FC, useRef, useState } from 'react'
 
-import { useTypedSelector } from '@/hooks/useTypedSelector'
+import { useCart } from '@/hooks/useCart'
+
+import { formatToCurrency } from '@/utils/format-to-currency'
 
 import styles from './Cart.module.scss'
 import CartItem from './cart-item/CartItem'
@@ -19,7 +21,8 @@ const Cart: FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const btnRef = useRef<HTMLButtonElement>(null)
 
-	const cart = useTypedSelector(state => state.cart.items)
+	const { cart, total } = useCart()
+
 	return (
 		<div className={styles['wrapper-cart']}>
 			<button
@@ -27,7 +30,7 @@ const Cart: FC = () => {
 				ref={btnRef}
 				onClick={e => setIsOpen(!isOpen)}
 			>
-				<span className={styles.badge}>1</span>
+				<span className={styles.badge}>{cart.length}</span>
 				<span className={styles.text}> My Basket</span>
 			</button>
 
@@ -44,9 +47,13 @@ const Cart: FC = () => {
 
 					<DrawerBody>
 						<div className={styles.cart}>
-							{cart.map(item => {
-								return <CartItem key={item.id} item={item} />
-							})}
+							{cart.length ? (
+								cart.map(item => {
+									return <CartItem key={item.id} item={item} />
+								})
+							) : (
+								<div>Cart is empty</div>
+							)}
 						</div>
 					</DrawerBody>
 
@@ -57,7 +64,7 @@ const Cart: FC = () => {
 					>
 						<div>
 							<div className={styles.footer}>total:</div>
-							<div>$100</div>
+							<div>{formatToCurrency(total)}</div>
 						</div>
 						<Button colorScheme='green'>Checkout</Button>
 					</DrawerFooter>
